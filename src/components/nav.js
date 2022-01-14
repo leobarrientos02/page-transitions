@@ -7,7 +7,7 @@ const Nav = () =>{
     return(
         <nav>
             <img src={Burger} alt="burger-svg" />
-            <a href="/">maxed.</a>
+            <a className='logo' href="/">maxed.</a>
             <img src={ ShoppingCart } alt="ShoppingCart" />
         </nav>
     )
