@@ -1,6 +1,5 @@
 import Burger from '../images/burger.svg';
 import ShoppingCart from '../images/shopping-cart.svg';
-import {BrowserRouter as Router, Link} from 'react-router-dom'
 
 const Nav = () =>{
 

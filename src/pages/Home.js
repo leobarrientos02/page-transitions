@@ -1,11 +1,34 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, {useState,useEffect} from "react";
 import FrontPageHandbag from '../images/frontpage-handbag.png';
 
-const Home = () => {
 
+const Home = () => {
+    // Set loading state to true initially
+    const [loading, setLoading] = useState(true);
+    useEffect(()=>{
+        // Loaidn function to load data or fake it
+        const loadData = async () =>{
+            // Wait for two seconds
+            await new Promise((r) => setTimeout(r, 1000));
+
+            // Toggle loading State
+            setLoading((loading) => !loading);
+        };
+
+        loadData();
+    },[]);
+  
+    if(loading){
     return(
-        <div className="handbag-body">
+        <div className="loading">
+            <h1>
+                ..Loading..
+            </h1>
+        </div>
+    );
+    }else{
+        return(
+            <div className="handbag-body">
             <section className="showcase">
                 <div className="image-container">
                     <img src={FrontPageHandbag} alt="Handbag" />
@@ -80,8 +103,9 @@ const Home = () => {
                     />
                 </svg>
             </section>
-        </div>
-    );
+        </div>            
+        );   
+    }
 };
 
 export default Home;

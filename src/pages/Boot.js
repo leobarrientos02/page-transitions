@@ -1,9 +1,33 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import FrontPageBoot from '../images/frontpage-boot.png';
 
 const Boot = () =>{
-    return(
-        <div className="boot-body">
+    // Set loading state to true initially
+    const [loading, setLoading] = useState(true);
+    useEffect(()=>{
+        // Loaidn function to load data or fake it
+        const loadData = async () =>{
+            // Wait for two seconds
+            await new Promise((r) => setTimeout(r, 2000));
+
+            // Toggle loading State
+            setLoading((loading) => !loading);
+        };
+
+        loadData();
+    },[]);
+    
+    if(loading){
+        return(
+            <div className="loading">
+                <h1>
+                    ..Loading..
+                </h1>
+            </div>
+        );        
+    }else{    
+        return(
+            <div className="boot-body">
             <section className="showcase">
                 <div className="image-container">
                     <img src={FrontPageBoot} alt="Boot" />
@@ -78,8 +102,9 @@ const Boot = () =>{
                     />
                 </svg>
             </section>            
-        </div>
-    );
+            </div>
+        );
+    }
 };
 
 export default Boot;
