@@ -1,24 +1,23 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import FrontPageHandbag from '../images/frontpage-handbag.png';
+import FrontPagehat from '../images/frontpage-hat.png';
 
-const Home = () => {
-
+const Hat = () =>{
     return(
-        <div className="handbag-body">
+        <div className="hat-body">
             <section className="showcase">
                 <div className="image-container">
-                    <img src={FrontPageHandbag} alt="Handbag" />
+                    <img src={FrontPagehat} alt="hat" />
                 </div>
+
                 <div className="showcase-text">
-                    <h2 className="showcase-title">Going Places. With bags of beauty</h2>
-                    <h3 className="showcase-subtitle">On everyone's wishlist this season? Timeless presents they'll treasure forever, including our must have Leisara handbag.</h3>
+                    <h2 className="showcase-title">The perfect finishing touch.</h2>
+                    <h3 className="showcase-subtitle">Missing that finishing touch? Top off your outfit with our range of hats, from fedoras to flat caps. Cosy never looked so good.</h3>
                     <a href="ProductPage" className="showcase-button">
                         <button>Explore</button>
                     </a>
                 </div>
-                
-                <a href="Boot">
+
+                <a href="/">
                     <svg
                         className="showcase-arrow"
                         width="26"
@@ -79,9 +78,9 @@ const Home = () => {
                         fillOpacity="0.25"
                     />
                 </svg>
-            </section>
+            </section>            
         </div>
     );
 };
 
-export default Home;
+export default Hat;

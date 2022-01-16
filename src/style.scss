@@ -11,13 +11,14 @@ body{
 
 .showcase{
     display: flex;
-    position: absolute;
+    //position: absolute;
     align-items: center;
     min-height: 90vh;
     justify-content: space-between;
     padding: 0rem 15% 0rem 15%;
     overflow: hidden;
 }
+
 
 nav{
     min-height: 10vh;
@@ -62,18 +63,21 @@ nav{
 }
 .showcase-subtitle{
     font-size: 1rem;
-    padding: 3rem 0rem;
     font-weight: 400;
 }
 .showcase-button{
-    text-decoration: none;
-    padding: 0.5rem 2rem;
-    color: black;
-    font-weight: 500;
-    font-family: "Poppins", sans-serif;
-    background: white;
-    font-size: 0.8rem;
-    cursor: pointer;
+    button{
+        text-decoration: none;
+        margin: 1rem 0rem;
+        cursor: pointer;
+        color: black;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        background: white;
+        font-size: 0.8rem;
+        border: none;
+        padding: .5rem 2rem;
+    }
 }
 .showcase-arrow{
     cursor: pointer;

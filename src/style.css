@@ -14,7 +14,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -89,19 +88,20 @@ nav img {
 
 .showcase-subtitle {
   font-size: 1rem;
-  padding: 3rem 0rem;
   font-weight: 400;
 }
 
-.showcase-button {
+.showcase-button button {
   text-decoration: none;
-  padding: 0.5rem 2rem;
+  margin: 1rem 0rem;
+  cursor: pointer;
   color: black;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   background: white;
   font-size: 0.8rem;
-  cursor: pointer;
+  border: none;
+  padding: .5rem 2rem;
 }
 
 .showcase-arrow {
