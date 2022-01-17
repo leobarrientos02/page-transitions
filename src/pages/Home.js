@@ -5,6 +5,91 @@ import {motion} from 'framer-motion';
 
 const Home = () => {
 
+    const test = () =>{
+        var image1 = document.querySelector('.bagImage');
+        //console.log("WORK");
+        var t2 = gsap.timeline();
+        t2.fromTo( image1, 
+            { 
+                y: "0%",
+                opacity: 1,
+            },
+            {
+                y: "200%",
+                opacity: 0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            }
+        );
+
+        var text = document.querySelector('.showcase-text');
+        //console.log("WORK");
+        var t3 = gsap.timeline();
+        t3.fromTo( text, 
+            { 
+                y: "0%",
+                opacity: 1,
+            },
+            {
+                y: "200%",
+                opacity: 0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            }
+        );
+        
+        var circle1 = document.querySelector('.circle-1');
+        //console.log("WORK");
+        var t4 = gsap.timeline();
+        t4.fromTo( circle1, 
+            { 
+                x: "0%",
+                opacity: 1,
+            },
+            {
+                x: "-200%",
+                opacity: 0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            }
+        );
+
+        var circle2 = document.querySelector('.circle-2');
+        //console.log("WORK");
+        var t5 = gsap.timeline();
+        t5.fromTo( circle2, 
+            { 
+                y: "0%",
+                opacity: 1,
+            },
+            {
+                y: "200%",
+                opacity: 0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            }
+        );
+
+        var circle3 = document.querySelector('.circle-3');
+        //console.log("WORK");
+        var t6 = gsap.timeline();
+        t6.fromTo( circle3, 
+            { 
+                y: "0%",
+                opacity: 1,
+            },
+            {
+                y: "-200%",
+                opacity: 0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            }
+        );
+
+        
+    };
+
+
     const el = useRef();
     const q = gsap.utils.selector(el);
     const tl = useRef();
@@ -119,7 +204,7 @@ const Home = () => {
                     </a>
                 </div>
                 
-                <a href="Boot">
+                <div onClick={test}>
                     <svg
                         className="showcase-arrow"
                         width="26"
@@ -131,7 +216,7 @@ const Home = () => {
                             d="M25.1213 25.1213C26.2929 23.9497 26.2929 22.0503 25.1213 20.8787L6.02944 1.7868C4.85786 0.615224 2.95837 0.615224 1.7868 1.7868C0.615224 2.95837 0.615224 4.85786 1.7868 6.02944L18.7574 23L1.7868 39.9706C0.615224 41.1421 0.615224 43.0416 1.7868 44.2132C2.95837 45.3848 4.85786 45.3848 6.02944 44.2132L25.1213 25.1213ZM19 26H23V20H19V26Z"
                             fill="white"/>
                     </svg>
-                </a>
+                </div>
                 <svg
                     className="circle circle-1"
                     width="243"

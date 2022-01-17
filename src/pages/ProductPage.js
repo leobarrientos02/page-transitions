@@ -32,7 +32,7 @@ const ProductPage = () =>{
             {
                 opacity: 1,
                 y: 0,
-                stagger: 0.15,
+                stagger: 0.1,
                 ease: "sine.out",
             },
         )
