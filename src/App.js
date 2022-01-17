@@ -1,12 +1,13 @@
 import React from "react";
 import Home from "./pages/Home";
 // ROUTES
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, useLocation} from 'react-router-dom';
 import Nav from "./components/nav";
 import ProductPage from "./pages/ProductPage";
 import Boot from "./pages/Boot";
 import Hat from "./pages/Hat";
 import {AnimatePresence} from 'framer-motion';
+import styled from "styled-components";
 
 function App() {
     // // Set loading state to true initially
@@ -33,11 +34,13 @@ function App() {
     //     </div>
     // );
     // }else{  
+      const location = useLocation();
+      //console.log(location);
       return (
         <div className="app">
         <Nav />
-        <AnimatePresence exitBeforeEnter>
-        <Routes>
+        <AnimatePresence>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />}></Route>
           <Route path="/ProductPage" element={<ProductPage/>}></Route>
           <Route path="/Boot" element={<Boot/>}></Route>
@@ -47,6 +50,6 @@ function App() {
         </div>
       );
     // }
-}
+};
 
 export default App;

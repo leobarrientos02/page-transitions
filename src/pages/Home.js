@@ -1,6 +1,8 @@
 import React,{useRef,useLayoutEffect} from "react";
 import FrontPageHandbag from '../images/frontpage-handbag.png';
 import gsap from "gsap";
+import {motion} from 'framer-motion';
+
 const Home = () => {
 
     const el = useRef();
@@ -86,14 +88,28 @@ const Home = () => {
         },
         "<"
         )                          
-
+        .fromTo(q('.handbag-body'),
+            {
+                background: "linear-gradient(260deg, #b27a5c, #7f5450)",
+            },
+            {
+                background: "linear-gradient(260deg, #d75d62, #754d4f)",
+                duration: 3,
+                ease: "sine.out",
+            },
+            "<",
+        )
     });
-
     return(
-        <div className="handbag-body" ref={el}>
+        <div ref={el}>
+        <div className="handbag-body">
             <section className="showcase">
                 <div className="image-container">
-                    <img className="bagImage" src={FrontPageHandbag} alt="Handbag" />
+                    <motion.img 
+                        className="bagImage" 
+                        src={FrontPageHandbag} 
+                        alt="Handbag"
+                    />
                 </div>
                 <div className="showcase-text">
                     <h2 className="showcase-title">Going Places. With bags of beauty</h2>
@@ -166,7 +182,9 @@ const Home = () => {
                 </svg>
             </section>
                          
+        </div>            
         </div>
+
     );
 };
 

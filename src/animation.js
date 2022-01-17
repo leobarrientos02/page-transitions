@@ -1,12 +1,15 @@
-export const slideOut = {
-    hidden:{
-        x:100,
+export const popup = {
+    hidden: {
+      opacity: 1,
     },
-    show:{
-        x: 0,
-        transition: {
-            ease: "easeOut",
-            duration: 3,
-        }
-    },  
+    show: {
+      opacity: 0,
+      transition: {
+        duration: 2,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 0.6 },
+    },
 };

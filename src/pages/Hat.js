@@ -87,11 +87,22 @@ const Hat = () =>{
         },
         "<"
         )                          
-
+        .fromTo(q('.hat-body'),
+            {
+                background: "linear-gradient(260deg, #5d8cb7, #4c4f70)",
+            },
+            {
+                background: "linear-gradient(260deg, #b27a5c, #7f5450)",
+                duration: 3,
+                ease: "sine.out",
+            },
+            "<",
+        )
     });    
 
     return(
-        <div className="hat-body" ref={el}>
+        <div ref={el}>
+            <div className="hat-body">
             <section className="showcase">
                 <div className="image-container">
                     <img className="hatImage" src={FrontPagehat} alt="hat" />
@@ -167,6 +178,7 @@ const Hat = () =>{
                     />
                 </svg>
             </section>     
+        </div>
         </div>
     );
 };

@@ -86,12 +86,23 @@ const Boot = () =>{
             ease: "Power3.easeOut",
         },
         "<"
-        )                          
-
+        )                   
+        .fromTo(q('.boot-body'),
+            {
+                background: "linear-gradient(260deg, #d75d62, #754d4f)",
+            },
+            {
+                background: "linear-gradient(260deg, #5d8cb7, #4c4f70)",
+                duration: 3,
+                ease: "sine.out",
+            },
+            "<",
+        )
     });
 
     return(
-        <div className="boot-body" ref={el}>
+        <div ref={el}>
+            <div className="boot-body">
             <section className="showcase">
                 <div className="image-container">
                     <img className="bootImage" src={FrontPageBoot} alt="Boot" />
@@ -166,6 +177,7 @@ const Boot = () =>{
                     />
                 </svg>
             </section>                          
+        </div>        
         </div>
     );
 };

@@ -46,4 +46,15 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    console.log(window.location.pathname);
+    
+    if( window.location.pathname == "/Boot"){
+          document.body.style.background = "linear-gradient(260deg, #5d8cb7, #4c4f70)";
+      }else if( window.location.pathname == "/Hat"){
+        document.body.style.background = "linear-gradient(260deg, #b27a5c, #7f5450)";
+      }else{
+        document.body.style.background = "linear-gradient(260deg, #d75d62, #754d4f)";
+      }
+  </script>
 </html>
