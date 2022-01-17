@@ -160,26 +160,6 @@ nav img {
 
 .loading h1 {
   color: white;
-  -webkit-animation: loadingAnim 1s infinite;
-          animation: loadingAnim 1s infinite;
   opacity: 1;
-}
-
-@-webkit-keyframes loadingAnim {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes loadingAnim {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 /*# sourceMappingURL=style.css.map */

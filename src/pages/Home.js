@@ -1,37 +1,99 @@
-import React, {useState,useEffect} from "react";
+import React,{useRef,useLayoutEffect} from "react";
 import FrontPageHandbag from '../images/frontpage-handbag.png';
-
-
+import gsap from "gsap";
 const Home = () => {
-    // Set loading state to true initially
-    const [loading, setLoading] = useState(true);
-    useEffect(()=>{
-        // Loaidn function to load data or fake it
-        const loadData = async () =>{
-            // Wait for two seconds
-            await new Promise((r) => setTimeout(r, 1000));
 
-            // Toggle loading State
-            setLoading((loading) => !loading);
-        };
+    const el = useRef();
+    const q = gsap.utils.selector(el);
+    const tl = useRef();
 
-        loadData();
-    },[]);
-  
-    if(loading){
+    useLayoutEffect(()=>{
+        tl.current = gsap.timeline()
+        .fromTo(q(".bagImage"),
+            {
+                opacity: 0,
+                y:200,
+            },
+            {
+                opacity: 1,
+                y:0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            },
+        )
+        .fromTo(q('.showcase-text'),
+            {
+                opacity: 0,
+                y:200,
+            },
+            {
+                opacity: 1,
+                y:0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            },
+            "<"
+        )
+        .fromTo(q('.circle-2'),
+        {
+            opacity: 0,
+            y:200,
+        },
+        {
+            opacity: 1,
+            y:0,
+            duration: 2,
+            ease: "elastic.out(1.5,1)",
+        },
+        "<"
+        )
+        .fromTo(q('.circle-1'),
+        {
+            opacity: 0,
+            x:-200,
+        },
+        {
+            opacity: 1,
+            x:0,
+            duration: 2,
+            ease: "elastic.out(1.5,1)",
+        },
+        "<"
+        )  
+        .fromTo(q('.circle-3'),
+        {
+            opacity: 0,
+            y:-200,
+        },
+        {
+            opacity: 1,
+            y:0,
+            duration: 2,
+            ease: "elastic.out(1.5,1)",
+        },
+        "<"
+        )
+        .fromTo(q('.showcase-arrow'),
+        {
+            opacity: 0,
+            x:200,
+        },
+        {
+            opacity: 1,
+            x:0,
+            duration: 2,
+            ease: "Power3.easeOut",
+        },
+        "<"
+        )                          
+
+    });
+
     return(
-        <div className="loading">
-            <h1>
-                ..Loading..
-            </h1>
-        </div>
-    );
-    }else{
-        return(
-            <div className="handbag-body">
+        <div className="handbag-body" ref={el}>
             <section className="showcase">
                 <div className="image-container">
-                    <img src={FrontPageHandbag} alt="Handbag" />
+                    <img className="bagImage" src={FrontPageHandbag} alt="Handbag" />
                 </div>
                 <div className="showcase-text">
                     <h2 className="showcase-title">Going Places. With bags of beauty</h2>
@@ -103,9 +165,9 @@ const Home = () => {
                     />
                 </svg>
             </section>
-        </div>            
-        );   
-    }
+                         
+        </div>
+    );
 };
 
 export default Home;

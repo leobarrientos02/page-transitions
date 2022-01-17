@@ -105,7 +105,7 @@ nav{
     transform: scale(0.8);
 }
 
-.loading{
+.loading{ 
     width: 100%;
     height: 100vh;
     background: rgb(37, 37, 37);
@@ -117,16 +117,16 @@ nav{
     top: 0;
     left: 0;
     h1{
-        @keyframes loadingAnim{
-            0%{
-                opacity: 1;
-            }
-            100%{
-                opacity: 0;
-            }
-        }
+        // @keyframes loadingAnim{
+        //     0%{
+        //         opacity: 1;
+        //     }
+        //     100%{
+        //         opacity: 0.2;
+        //     }
+        // }
         color: white;
-        animation: loadingAnim 1s infinite;
+        // animation: loadingAnim 0.8s infinite;
         opacity: 1;
     }
 }

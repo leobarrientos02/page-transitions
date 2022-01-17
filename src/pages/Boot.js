@@ -1,36 +1,100 @@
-import React, {useEffect,useState} from "react";
+import React,{useLayoutEffect,useRef} from "react";
 import FrontPageBoot from '../images/frontpage-boot.png';
+import gsap from "gsap";
 
 const Boot = () =>{
-    // Set loading state to true initially
-    const [loading, setLoading] = useState(true);
-    useEffect(()=>{
-        // Loaidn function to load data or fake it
-        const loadData = async () =>{
-            // Wait for two seconds
-            await new Promise((r) => setTimeout(r, 2000));
 
-            // Toggle loading State
-            setLoading((loading) => !loading);
-        };
-
-        loadData();
-    },[]);
+    const el = useRef();
+    const q = gsap.utils.selector(el);
+    const tl = useRef();
     
-    if(loading){
-        return(
-            <div className="loading">
-                <h1>
-                    ..Loading..
-                </h1>
-            </div>
-        );        
-    }else{    
-        return(
-            <div className="boot-body">
+    useLayoutEffect(()=>{
+        tl.current = gsap.timeline()
+        .fromTo(q(".bootImage"),
+            {
+                opacity: 0,
+                y:200,
+            },
+            {
+                opacity: 1,
+                y:0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            },
+        )
+        .fromTo(q('.showcase-text'),
+            {
+                opacity: 0,
+                y:200,
+            },
+            {
+                opacity: 1,
+                y:0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            },
+            "<"
+        )
+        .fromTo(q('.circle-2'),
+        {
+            opacity: 0,
+            y:200,
+        },
+        {
+            opacity: 1,
+            y:0,
+            duration: 2,
+            ease: "elastic.out(1.5,1)",
+        },
+        "<"
+        )
+        .fromTo(q('.circle-1'),
+        {
+            opacity: 0,
+            x:-200,
+        },
+        {
+            opacity: 1,
+            x:0,
+            duration: 2,
+            ease: "elastic.out(1.5,1)",
+        },
+        "<"
+        )  
+        .fromTo(q('.circle-3'),
+        {
+            opacity: 0,
+            y:-200,
+        },
+        {
+            opacity: 1,
+            y:0,
+            duration: 2,
+            ease: "elastic.out(1.5,1)",
+        },
+        "<"
+        )
+        .fromTo(q('.showcase-arrow'),
+        {
+            opacity: 0,
+            x:200,
+        },
+        {
+            opacity: 1,
+            x:0,
+            duration: 2,
+            ease: "Power3.easeOut",
+        },
+        "<"
+        )                          
+
+    });
+
+    return(
+        <div className="boot-body" ref={el}>
             <section className="showcase">
                 <div className="image-container">
-                    <img src={FrontPageBoot} alt="Boot" />
+                    <img className="bootImage" src={FrontPageBoot} alt="Boot" />
                 </div>
                 <div className="showcase-text">
                     <h2 className="showcase-title">These boots were made for walking.</h2>
@@ -101,10 +165,9 @@ const Boot = () =>{
                         fillOpacity="0.25"
                     />
                 </svg>
-            </section>            
-            </div>
-        );
-    }
+            </section>                          
+        </div>
+    );
 };
 
 export default Boot;
