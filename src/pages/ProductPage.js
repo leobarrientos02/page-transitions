@@ -1,12 +1,45 @@
-import React from "react";
+import React,{ useRef,useLayoutEffect} from "react";
 import blackCard from '../images/blackcard.png';
 import yellowCard from '../images/yellowcard.png';
 import tanCard from '../images/tancard.png';
 import blueCard from '../images/bluecard.png';
 import productCart from '../images/product-cart.svg';
-const ProductPage = () =>{
-    return(
+import gsap from "gsap";
 
+const ProductPage = () =>{
+
+    const el = useRef();
+    const q = gsap.utils.selector(el);
+    const tl = useRef();
+    
+    useLayoutEffect(()=>{
+        tl.current = gsap.timeline()
+        .fromTo(q('.productPage'),
+            {
+                y: "100%"
+            },
+            {
+                y: "0%",
+                duration: 1,
+                ease: "Power3.easeOut",
+            },
+        )
+        .fromTo(q('.card'),
+            {
+                opacity: 0,
+                y: 50,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                stagger: 0.15,
+                ease: "sine.out",
+            },
+        )
+    });
+
+    return(
+        <div ref={el}>
         <div className="productPage">
             <div className="product-description">
                 <h2>Shop our signatures.</h2>
@@ -72,7 +105,9 @@ const ProductPage = () =>{
                 </div>                
             </div>
 
+        </div>            
         </div>
+
     );
 };
 

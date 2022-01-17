@@ -7,8 +7,6 @@ import ProductPage from "./pages/ProductPage";
 import Boot from "./pages/Boot";
 import Hat from "./pages/Hat";
 import {AnimatePresence} from 'framer-motion';
-import styled from "styled-components";
-
 function App() {
     // // Set loading state to true initially
     // const [loading, setLoading] = useState(true);
