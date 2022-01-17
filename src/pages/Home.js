@@ -94,7 +94,7 @@ const Home = () => {
             },
             {
                 background: "linear-gradient(260deg, #d75d62, #754d4f)",
-                duration: 3,
+                duration: 2,
                 ease: "sine.out",
             },
             "<",

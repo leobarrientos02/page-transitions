@@ -93,7 +93,7 @@ const Hat = () =>{
             },
             {
                 background: "linear-gradient(260deg, #b27a5c, #7f5450)",
-                duration: 3,
+                duration: 2,
                 ease: "sine.out",
             },
             "<",

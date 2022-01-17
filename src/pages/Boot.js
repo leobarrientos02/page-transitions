@@ -93,7 +93,7 @@ const Boot = () =>{
             },
             {
                 background: "linear-gradient(260deg, #5d8cb7, #4c4f70)",
-                duration: 3,
+                duration: 2,
                 ease: "sine.out",
             },
             "<",
