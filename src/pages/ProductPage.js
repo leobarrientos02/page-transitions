@@ -61,6 +61,15 @@ const ProductPage = () =>{
                         <img src={productCart} className="product-cart" alt="product-cart" />
                     </div>
                 </div>
+                <div className="card">
+                    <img className="product-img" src={ blackCard } alt="product" />
+                    <h2>Leisara</h2>
+                    <p>black leather</p>
+                    <div className="price">
+                        <h4>$300</h4>
+                        <img src={productCart} className="product-cart" alt="product-cart" />
+                    </div>
+                </div>                
             </div>
 
         </div>

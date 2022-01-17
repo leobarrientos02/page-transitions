@@ -148,6 +148,59 @@ nav img {
           transform: scale(0.8);
 }
 
+.productPage {
+  overflow-x: hidden;
+  background: white;
+  min-height: 90vh;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+}
+
+.productPage .product-description {
+  padding: 5% 15%;
+  color: #4b4b4b;
+}
+
+.productPage .product-description h2 {
+  font-size: 2rem;
+}
+
+.productPage .product-description p {
+  font-size: 1.2rem;
+  padding: 1rem 0rem;
+}
+
+.productPage .product-gallery {
+  display: -ms-grid;
+  display: grid;
+  padding: 0% 15%;
+  -ms-grid-columns: (minmax(270px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-gap: 2rem;
+}
+
+.productPage .product-gallery .product-img {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.productPage .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productPage .card {
+  padding: 2rem;
+}
+
 .loading {
   width: 100%;
   height: 100vh;
