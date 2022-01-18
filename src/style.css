@@ -251,13 +251,13 @@ nav img {
         -ms-flex-order: 1;
             order: 1;
   }
-  .circle-3 {
+  .circle-2 {
     top: 90%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%) scale(3);
             transform: translate(-50%, -50%) scale(3);
   }
-  .circle-1, .circle-2 {
+  .circle-3, .circle-1 {
     display: none;
   }
   .showcase-title {
@@ -277,12 +277,6 @@ nav img {
   .productPage {
     width: 100%;
     text-align: center;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .circle-1, .circle-2, .circle-3 {
-    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -197,12 +197,12 @@ nav{
         justify-content: center;
         order: 1;
     }
-    .circle-3{
+    .circle-2{
         top: 90%;
         left: 50%;
         transform: translate(-50%, -50%) scale(3);
     }
-    .circle-1,.circle-2{
+    .circle-3,.circle-1{
         display: none;
     }
     .showcase-title{
@@ -224,10 +224,4 @@ nav{
         text-align: center;
     }
     
-}
-
-@media screen and (max-width: 1000px) {
-    .circle-1,.circle-2,.circle-3{
-        display: none;
-    }
 }
