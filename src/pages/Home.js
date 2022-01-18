@@ -5,7 +5,7 @@ import {motion} from 'framer-motion';
 
 const Home = () => {
 
-    const test = () =>{
+    const BootPage = () =>{
         var image1 = document.querySelector('.bagImage');
         //console.log("WORK");
         var t2 = gsap.timeline();
@@ -84,8 +84,98 @@ const Home = () => {
                 duration: 2,
                 ease: "Power3.easeOut",
             }
+        ).add( function(){
+            window.location = "Boot";
+        },
+        "<80%"
+        );
+        
+    };
+
+    const ProductPage = () =>{
+        var image1 = document.querySelector('.bagImage');
+        //console.log("WORK");
+        var t2 = gsap.timeline();
+        t2.fromTo( image1, 
+            { 
+                y: "0%",
+                opacity: 1,
+            },
+            {
+                y: "200%",
+                opacity: 0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            }
         );
 
+        var text = document.querySelector('.showcase-text');
+        //console.log("WORK");
+        var t3 = gsap.timeline();
+        t3.fromTo( text, 
+            { 
+                y: "0%",
+                opacity: 1,
+            },
+            {
+                y: "200%",
+                opacity: 0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            }
+        );
+        
+        var circle1 = document.querySelector('.circle-1');
+        //console.log("WORK");
+        var t4 = gsap.timeline();
+        t4.fromTo( circle1, 
+            { 
+                x: "0%",
+                opacity: 1,
+            },
+            {
+                x: "-200%",
+                opacity: 0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            }
+        );
+
+        var circle2 = document.querySelector('.circle-2');
+        //console.log("WORK");
+        var t5 = gsap.timeline();
+        t5.fromTo( circle2, 
+            { 
+                y: "0%",
+                opacity: 1,
+            },
+            {
+                y: "200%",
+                opacity: 0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            }
+        );
+
+        var circle3 = document.querySelector('.circle-3');
+        //console.log("WORK");
+        var t6 = gsap.timeline();
+        t6.fromTo( circle3, 
+            { 
+                y: "0%",
+                opacity: 1,
+            },
+            {
+                y: "-200%",
+                opacity: 0,
+                duration: 2,
+                ease: "Power3.easeOut",
+            }
+        ).add( function(){
+            window.location = "ProductPage";
+        },
+        "<80%"
+        );
         
     };
 
@@ -199,12 +289,12 @@ const Home = () => {
                 <div className="showcase-text">
                     <h2 className="showcase-title">Going Places. With bags of beauty</h2>
                     <h3 className="showcase-subtitle">On everyone's wishlist this season? Timeless presents they'll treasure forever, including our must have Leisara handbag.</h3>
-                    <a href="ProductPage" className="showcase-button">
+                    <div className="showcase-button" onClick={ProductPage}>
                         <button>Explore</button>
-                    </a>
+                    </div>
                 </div>
                 
-                <div onClick={test}>
+                <div onClick={BootPage}>
                     <svg
                         className="showcase-arrow"
                         width="26"
