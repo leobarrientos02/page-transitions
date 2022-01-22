@@ -301,15 +301,15 @@ const Home = () => {
               On everyone's wishlist this season? Timeless presents they'll
               treasure forever, including our must have Leisara handbag.
             </h3>
-            <Link to="/ProductPage">
-              <div className="showcase-button" onClick={ProductPage}>
+            <Link to="ProductPage">
+              <div className="showcase-button">
                 <button>Explore</button>
               </div>
             </Link>
           </div>
 
-          <Link to="/BootPage">
-            <div onClick={BootPage}>
+          <Link to="BootPage">
+            <div>
               <svg
                 className="showcase-arrow"
                 width="26"
