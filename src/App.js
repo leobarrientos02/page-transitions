@@ -40,9 +40,9 @@ function App() {
       <AnimatePresence>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />}></Route>
-          <Route path="ProductPage" element={<ProductPage />}></Route>
-          <Route path="Boot" element={<Boot />}></Route>
-          <Route path="Hat" element={<Hat />}></Route>
+          <Route path="/ProductPage" element={<ProductPage />}></Route>
+          <Route path="/Boot" element={<Boot />}></Route>
+          <Route path="/Hat" element={<Hat />}></Route>
         </Routes>
       </AnimatePresence>
     </div>

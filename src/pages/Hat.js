@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import FrontPagehat from "../images/frontpage-hat.png";
 import gsap from "gsap";
+import { Link } from "react-router-dom";
 
 const Hat = () => {
   const BagPage = () => {
@@ -176,9 +177,7 @@ const Hat = () => {
         duration: 2,
         ease: "Power3.easeOut",
       }
-    ).add(function () {
-      window.location = "ProductPage";
-    }, "<80%");
+    );
   };
 
   const el = useRef();
@@ -299,9 +298,11 @@ const Hat = () => {
               Missing that finishing touch? Top off your outfit with our range
               of hats, from fedoras to flat caps. Cosy never looked so good.
             </h3>
-            <div onClick={ProductPage} className="showcase-button">
-              <button>Explore</button>
-            </div>
+            <Link to="/ProductPage">
+              <div onClick={ProductPage} className="showcase-button">
+                <button>Explore</button>
+              </div>
+            </Link>
           </div>
 
           <div onClick={BagPage}>
